@@ -37,11 +37,15 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Cache\RateLimiting\Limit;
+use App\Http\Controllers\HomeController;
 
 
 
 
 use Illuminate\Support\Facades\Storage;
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
 
 Route::get('/download/{filename}', function ($filename) {
     $path = 'upload/fileRepository/' . $filename;
