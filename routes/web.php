@@ -42,14 +42,6 @@ use Illuminate\Cache\RateLimiting\Limit;
 
 use Illuminate\Support\Facades\Storage;
 
-
-public function setUp(): void
-{
-    parent::setUp();
-    // Create a user if needed
-    $this->user = User::factory()->create(); // Requires Laravel 8 or higher
-}
-
 Route::get('/download/{filename}', function ($filename) {
     $path = 'upload/fileRepository/' . $filename;
 
